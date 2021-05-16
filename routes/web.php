@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProfilesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +21,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/p/create', [PostsController::class, 'create'])->name('posts.create');
+Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile');
